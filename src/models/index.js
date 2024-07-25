@@ -5,6 +5,7 @@ const clothesModel = require('./clothes/model.js');
 const foodModel = require('./food/model.js');
 const Collection = require('./data-collection.js');
 const userModel = require('./users.js');
+const todoModel = require('./todo/model.js')
 const productsModel = require('./products/model.js')
 const categoriesModel = require('./categories/model.js')
 const environment = process.env.NODE_ENV;
@@ -14,7 +15,8 @@ const testOrProduction = (environment === 'test' || environment === 'production'
 const sequelize = new Sequelize(DATABASE_URL, testOrProduction ? {logging: false} : {});
 const food = foodModel(sequelize, DataTypes);
 const clothes = clothesModel(sequelize, DataTypes);
-const users = userModel(sequelize, DataTypes)
+const users = userModel(sequelize, DataTypes);
+const todos = todoModel(sequelize, DataTypes)
 const products = productsModel(sequelize, DataTypes);
 const categories = categoriesModel(sequelize, DataTypes)
 
@@ -24,5 +26,6 @@ module.exports = {
   clothes: new Collection(clothes),
   products: new Collection(products),
   categories: new Collection(categories),
+  todos: new Collection(todos),
   users,
 };
