@@ -1,6 +1,10 @@
 # Auth API
 
-This repository contains the Auth API, a backend service for user authentication and authorization. It provides endpoints for user registration, login, and role-based access control.
+___
+
+**This repository contains the Auth API, a backend service for user authentication and authorization. It provides endpoints for user registration, login, and role-based access control.**
+
+___
 
 ## Features
 
